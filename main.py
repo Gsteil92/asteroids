@@ -1,7 +1,7 @@
 """
 Creator Name: George Steil
 Creation Date: 10/30/2024
-Update Date: N/A
+Update Date: 10/31/2024
 """
 
 import pygame
@@ -17,14 +17,28 @@ def main():
 # Define color
     black = (0, 0, 0)
 
+# Setting Delta Time
+    clock = pygame.time.Clock()
+    delta_time = 0
+
 # Game loop
     running = True
     while running:
+        # Gives the user the ability to close the window
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        # Fills the screen with color black
         screen.fill(black)
+
+        # Refereshes the screen with changes
         pygame.display.flip()
+
+        # Sets the fps to 60 fps
+        clock.tick(60)
+
+        # Shows the delta time
+        delta_time = clock.tick(60)/1000
 
 
 # Print statements
