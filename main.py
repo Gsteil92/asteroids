@@ -7,6 +7,7 @@ Update Date: 10/31/2024
 import pygame
 from constants import *
 
+
 def main():
 # Initialize Pygame
     pygame.init()
@@ -19,7 +20,7 @@ def main():
 
 # Setting Delta Time
     clock = pygame.time.Clock()
-    delta_time = 0
+    dt = 0
 
 # Game loop
     running = True
@@ -38,7 +39,7 @@ def main():
         clock.tick(60)
 
         # Shows the delta time
-        delta_time = clock.tick(60)/1000
+        dt = clock.tick(60)/1000
 
 
 # Print statements
