@@ -5,7 +5,9 @@ Update Date: 10/31/2024
 """
 
 import pygame
+from circleshape import *
 from constants import *
+from player import *
 
 
 def main():
@@ -22,6 +24,11 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+# Set up player at the center of the screen
+    x = SCREEN_WIDTH / 2
+    y = SCREEN_HEIGHT / 2
+    player = Player(x, y)
+
 # Game loop
     running = True
     while running:
@@ -31,6 +38,9 @@ def main():
                 return
         # Fills the screen with color black
         screen.fill(black)
+        
+        # Draw the player
+        player.draw(screen)
 
         # Refereshes the screen with changes
         pygame.display.flip()
@@ -40,6 +50,8 @@ def main():
 
         # Shows the delta time
         dt = clock.tick(60)/1000
+
+        
 
 
 # Print statements
