@@ -40,6 +40,12 @@ def main():
 
 		for shot in shots_group:
 			shot.update(dt)
+
+		for shot in shots_group:
+			for asteroid in asteroids_group:
+				if asteroid.collisions(shot):
+					asteroid.split()
+					shot.kill()
 			
 		for object in asteroids_group:
 			if object.collisions(player):
